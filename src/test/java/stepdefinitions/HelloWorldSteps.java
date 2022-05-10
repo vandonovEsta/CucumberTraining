@@ -26,9 +26,18 @@ public class HelloWorldSteps {
             greeting = greet(name);
         }
     }
-    @Then("The Hello world greeting should be returned.")
+    @Then("The Hello World app greeting should be returned.")
     public void the_hello_world_greeting_should_be_returned() {
-        Assert.assertEquals(greeting, "Hello World!");
+        if(name == null || name == "") {
+            Assert.assertEquals(greeting, "Hello World!");
+        } else {
+            Assert.assertEquals(greeting, "Hello " + name + "!");
+        }
 
+    }
+
+    @Given("Greg enters the room")
+    public void greg_enters_the_room(){
+        name = "Greg";
     }
 }

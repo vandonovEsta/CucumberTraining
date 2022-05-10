@@ -5,5 +5,9 @@ Feature: Hello World greeting feature
   Scenario: Hello World Greeting
     Given No specific name is given
     When The Hello World app is called
-    Then The Hello world greeting should be returned.
+    Then The Hello World app greeting should be returned.
 
+  Scenario: Hello Greg Greeting
+    Given Greg enters the room
+    When The Hello World app is called
+    Then The Hello World app greeting should be returned.
