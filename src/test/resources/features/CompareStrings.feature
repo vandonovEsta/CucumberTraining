@@ -17,8 +17,8 @@ Feature: Words should be successfully compared
 
 
     Scenario: Reformat and compare sentences
-      Given _First sentence is set to: "My sentence (and more…)!!?"
-      And _Second sentence is set to: "My sentence and more…!!"
+      Given _First sentence is set to: "My sentence (and more…)!!??"
+      And _Second sentence is set to: "My sentence and more…!!?"
       When First "?" is removed
       And All "()" are removed
       And Case sensitive is true

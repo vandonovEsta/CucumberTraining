@@ -52,7 +52,7 @@ public class CompareStringsSteps {
     }
 
     @Given("_First/_1st sentence is set to: {string}")
-    public void _first_sentence_is_set_to(String sentence) {
+    public void first_sentence_is_set_to(String sentence) {
         firstSentence = sentence;
     }
 

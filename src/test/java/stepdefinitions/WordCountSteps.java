@@ -18,4 +18,5 @@ public class WordCountSteps {
     public void userCountsTheWords() {
         System.out.println("\nTotal words in the article are " + stringHelper.countWords(article));
     }
+
 }

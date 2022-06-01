@@ -20,6 +20,7 @@ public class StringHelper {
 
     /**
      * Compare two strings based on case-sensitive option
+     *
      * @param firstString
      * @param secondString
      * @return
@@ -47,10 +48,6 @@ public class StringHelper {
         return words;
     }
 
-    public String removeAllCharacters(String input, char replacesMe) {
-
-        return input.replaceAll(String.valueOf(replacesMe), "");
-    }
 
     /**
      * @param input
@@ -70,6 +67,7 @@ public class StringHelper {
 
     /**
      * Escapes special characters
+     *
      * @param input
      * @return
      */
@@ -91,6 +89,12 @@ public class StringHelper {
             case ".":
                 escapedCharacter = "\\.";
                 break;
+            case "?":
+                escapedCharacter = "\\?";
+                break;
+            case "!":
+                escapedCharacter = "\\!";
+                break;
             default:
                 escapedCharacter = input;
                 break;
@@ -100,21 +104,21 @@ public class StringHelper {
 
     /**
      * Removes the first occurrence
+     *
      * @param input
      * @param replaceMe
      * @return
      * @throws Exception
      */
     public String removeFirst(String input, String replaceMe) throws Exception {
-        if (replaceMe.length() > 1) {
-            throw new Exception("More han 1 character are not allowed!");
-        } else {
-            return input.replace(replaceMe, "");
-        }
+        replaceMe = escapeSpecialCharacter(replaceMe);
+
+        return input.replaceFirst(replaceMe, "");
     }
 
     /**
      * Splits a string to words and counts them
+     *
      * @param countMyWords
      * @return
      */
